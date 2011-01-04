@@ -11,6 +11,10 @@ module SampleApp
     # Settings in config/environments/* take precedence over those specified here.
     # ...
 
+	if Rails.env == "production"
+	config.middleware.use("Rack::GoogleAnalytics", :web_property_id => "UA-20541736-1")
+	end
+
     # Configure the default encoding used in templates for Ruby 1.9.
     config.encoding = "utf-8"
 
